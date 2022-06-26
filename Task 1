@@ -7,15 +7,68 @@ request.send();
 request.onload=function(){
 var data=JSON.parse(request.response);
 console.log(data);
-for(var i=0 ; i<data.length ; i++){
-   console.log((data[i]).flag,name);
+function myData(data){
+    console.log(data);
+    var a= data.filter(coun= coun.region='Asia')
+    console.log(a)
 }
 }
 
+(b)  Get all the countries with a population of less than 2 lakhs using Filter function
+Ans:-
+var request = new XMLHttpRequest();
+request.open("Get","https://raw.githubusercontent.com/rvsp/restcountries-json-data/master/res-countries.json");
+request.send();
+request.onload=function(){
+var data=JSON.parse(request.response);
+console.log(data);
+function mydata (data){
+    var a =data.filter(coun=>coun.population<200000)
+    console.log(a)
+}
+}
 
+(c)  Print the following details name, capital, flag using forEach function
+Ans:-
+var request = new XMLHttpRequest();
+request.open("Get","https://raw.githubusercontent.com/rvsp/restcountries-json-data/master/res-countries.json");
+request.send();
+request.onload=function(){
+var data=JSON.parse(request.response);
+console.log(data);
+data.forEach(myData);
+function myData(data){
+   var (i=0 ; i<data.length ; i++) {
+   console.log((data[i]).name,capital,flag);
+}
+}
+}
 
+(d)  Print the total population of countries using reduce function
+Ans:-
+var request = new XMLHttpRequest();
+request.open("Get","https://raw.githubusercontent.com/rvsp/restcountries-json-data/master/res-countries.json");
+request.send();
+request.onload=function(){
+var data=JSON.parse(request.response);
+console.log(data);
+function myData (data){
+    let c=data.reduce((coun,population)=>(coun+population))
+    console.log(c)
+}
+}
 
-Get all the countries with a population of less than 2 lakhs using Filter function
-Print the following details name, capital, flag using forEach function
-Print the total population of countries using reduce function
-Print the country which uses US Dollars as currency.
+(e)  Print the country which uses US Dollars as currency.
+Ans:-
+var request = new XMLHttpRequest();
+request.open("Get","https://raw.githubusercontent.com/rvsp/restcountries-json-data/master/res-countries.json");
+request.send();
+request.onload=function(){
+var data=JSON.parse(request.response);
+console.log(data);
+function myData(data){
+    console.log(data);
+    var a= data.filter(coun= coun.currency='Dollar')
+    console.log(a)
+}
+}
